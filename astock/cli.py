@@ -51,6 +51,8 @@ def main(argv: list[str] | None = None) -> int:
         level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(asctime)s %(levelname)s %(message)s",
     )
+    if not args.verbose:
+        logging.getLogger("httpx").setLevel(logging.WARNING)
 
     if args.command == "serve":
         import uvicorn
