@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A 股行情 Agent</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>A 股行情 Agent</h1>
+    <div class="toolbar">
+      <input id="keyword" type="search" placeholder="搜索代码 / 名称，如 600000 或 浦发" />
+      <select id="sort">
+        <option value="change_pct">按涨跌幅</option>
+        <option value="amount">按成交额</option>
+        <option value="turnover_rate">按换手率</option>
+        <option value="total_mcap">按总市值</option>
+        <option value="price">按价格</option>
+      </select>
+      <select id="direction">
+        <option value="desc">降序</option>
+        <option value="asc">升序</option>
+      </select>
+      <select id="limit">
+        <option value="20">20 条</option>
+        <option value="50" selected>50 条</option>
+        <option value="100">100 条</option>
+      </select>
+      <button id="refresh" type="button">刷新行情</button>
+    </div>
+    <p id="stats" class="stats"></p>
+  </header>
+
+  <main>
+    <section class="table-wrap">
+      <table id="quotes">
+        <thead>
+          <tr>
+            <th>代码</th><th>名称</th><th class="num">最新价</th><th class="num">涨跌</th>
+            <th class="num">涨跌幅</th><th class="num">今开</th><th class="num">最高</th>
+            <th class="num">最低</th><th class="num">成交额(亿)</th><th class="num">换手率</th>
+            <th class="num">市盈(TTM)</th><th class="num">总市值(亿)</th><th>时间</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="empty" class="empty hidden">暂无数据，请先运行 <code>python -m astock quotes 600000 000001</code> 抓取。</p>
+    </section>
+
+    <section id="detail" class="detail hidden">
+      <div class="detail-head">
+        <h2 id="detail-title"></h2>
+        <div>
+          <select id="period">
+            <option value="day">日线</option>
+            <option value="week">周线</option>
+            <option value="month">月线</option>
+          </select>
+          <button id="close-detail" type="button">关闭</button>
+        </div>
+      </div>
+      <div id="chart"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
