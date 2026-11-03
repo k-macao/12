@@ -2,7 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
-data/
+/data/
 *.db
 .pytest_cache/
 .ruff_cache/

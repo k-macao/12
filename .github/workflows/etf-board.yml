@@ -1,0 +1,96 @@
+name: ETF 资金看板 · 每天两次自动推送
+
+# 北京时间 11:30 / 15:30（GitHub Actions 的 cron 用 UTC，中国无夏令时）：
+#   03:30 UTC = 11:30 CST（盘中）
+#   07:30 UTC = 15:30 CST（收盘后）
+# 每次运行都会刷新数据并 git push 一次，因此每天正好推送两次。
+# 非交易日会沿用最近一个交易日的数据，并照常推送一次状态更新。
+on:
+  schedule:
+    - cron: '30 3 * * *'
+    - cron: '30 7 * * *'
+  workflow_dispatch:
+    inputs:
+      offline:
+        description: '仅用仓库内快照重算（不联网，便于验证）'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: etf-board-push
+  cancel-in-progress: false
+
+jobs:
+  push-update:
+    name: 抓取数据并推送
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      TZ: Asia/Shanghai
+      # 可改成其它源站地址；ETF_PUSH_TIMES 只影响页面上的说明文字
+      ETF_SOURCE_URL: https://etf-fund-flow-board.app.workbuddy.host/
+      ETF_PUSH_TIMES: 每天 11:30 / 15:30（北京时间）
+      OFFLINE: ${{ inputs.offline }}
+      WEBHOOK: ${{ secrets.ETF_WEBHOOK_URL }}
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 运行解析测试（离线）
+        run: python -m unittest discover -s tests -v
+
+      - name: 抓取并刷新看板数据
+        run: |
+          if [ "$OFFLINE" = "true" ]; then
+            python scripts/update_board.py --offline
+          else
+            python scripts/update_board.py
+          fi
+
+      - name: 推送摘要到 webhook（可选）
+        if: env.WEBHOOK != ''
+        run: python scripts/notify.py
+        env:
+          ETF_WEBHOOK_URL: ${{ env.WEBHOOK }}
+
+      - name: 提交并 git push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/board.json docs/data/board.js docs/data/history.json docs/latest.md
+          if git diff --cached --quiet; then
+            echo "本次无数据变化，跳过提交"
+          else
+            git commit -m "chore(etf-board): 自动刷新看板数据 $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      # 可选：把 docs/ 发布成 GitHub Pages。需要在 Settings → Pages 里把
+      # Source 设为 "GitHub Actions"，并添加仓库变量 ENABLE_PAGES=true。
+      # 放在同一个 job 里，确保发布的是刚生成的那份数据而不是旧检出。
+      - name: 配置 Pages
+        if: vars.ENABLE_PAGES == 'true'
+        uses: actions/configure-pages@v5
+      - name: 上传站点
+        if: vars.ENABLE_PAGES == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: 发布到 Pages
+        if: vars.ENABLE_PAGES == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4

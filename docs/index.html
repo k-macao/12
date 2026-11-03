@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="重点ETF资金看板（复制版）：盘中分钟观测、ETF托底信号、日度资金全景。每天两次自动推送更新。">
+<title>【东财策略 金科】重点ETF资金看板</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <h1 id="boardTitle">【东财策略 金科】重点ETF资金看板</h1>
+      <p id="contact">联系人：陈果 / 金科（欢迎随缘打赏π点 ❤️）</p>
+    </div>
+    <nav id="nav" class="nav" aria-label="章节导航"></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="statusbar">
+    <div class="status-left">
+      <span class="badge badge-auto">🔁 自动推送 · <span id="scheduleText">每天两次</span></span>
+      <span class="badge">交易日 <b id="tradeDate">—</b></span>
+      <span class="badge">更新于 <b id="updatedAt">—</b></span>
+      <span class="badge badge-source" id="sourceLabel">—</span>
+    </div>
+    <div class="status-right">
+      <span id="countdown" class="countdown">下次刷新 60s</span>
+      <button id="refreshBtn" class="btn btn-primary" type="button">立即刷新</button>
+      <button id="autoBtn" class="btn" type="button">暂停自动刷新</button>
+    </div>
+  </div>
+  <div id="alert" class="alert hidden" role="status"></div>
+
+  <!-- 第一部分 -->
+  <section id="part1" class="card">
+    <h2>第一部分 · 盘中分钟观测</h2>
+    <p class="sub"><span id="intradayDate">—</span> 分时 <span id="intradayTime"></span> ｜ <span id="intradayNote"></span></p>
+    <div class="kpis" id="kpis1"></div>
+
+    <h3>20大ETF放量案例</h3>
+    <p class="hint">按当日累计成交额降序，颜色按涨跌幅区分（红涨 / 绿跌）。分钟级分时曲线为原站图表，本复制版以其公开的当日数据重绘。</p>
+    <div id="caseChart" class="chart chart-svg"></div>
+
+    <h3>单只ETF当日表现<span class="h3-note">按成交额降序，条形背景按成交额相对最大值比例</span></h3>
+    <div class="table-scroll">
+      <table id="etfTable" class="grid">
+        <thead><tr><th>代码</th><th>名称</th><th class="num">当日成交额(亿)</th><th class="num">占比</th><th class="num">涨跌幅</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 第二部分 -->
+  <section id="part2" class="card">
+    <h2>第二部分 · ETF托底信号</h2>
+    <p class="sub" id="supportNote"></p>
+    <div class="kpis" id="kpis2"></div>
+
+    <h3>日度净流入与托底日<span class="h3-note">红柱=净流入 &gt; 100亿的托底候选日，黄柱=近期交易日，虚线=最新柱水平线</span></h3>
+    <div id="supportChart" class="chart chart-svg"></div>
+    <div class="legend">
+      <span><i class="sw sw-red"></i>托底日（&gt;100亿）</span>
+      <span><i class="sw sw-yellow"></i>近期交易日</span>
+      <span><i class="sw sw-blue"></i>其余交易日</span>
+      <span><i class="sw sw-dash"></i>最新数值水平线</span>
+    </div>
+  </section>
+
+  <!-- 第三部分 -->
+  <section id="part3" class="card">
+    <h2>第三部分 · 日度资金全景</h2>
+    <p class="sub" id="panoramaNote"></p>
+
+    <h3>日度合计净流入走势<span class="h3-note">单位：亿元，点色按当日净申购 / 净赎回</span></h3>
+    <div id="panoramaChart" class="chart chart-svg"></div>
+
+    <h3>最新交易日 · 各类宽基净流入构成</h3>
+    <div id="composition" class="composition"></div>
+
+    <h3 id="dailyTitle">最近一个月 · 各类宽基ETF日度净流入（亿元）</h3>
+    <div class="table-scroll">
+      <table id="dailyTable" class="grid grid-daily">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="hint" id="colorNote"></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>复制自 <a id="sourceLink" href="https://etf-fund-flow-board.app.workbuddy.host/" target="_blank" rel="noopener">etf-fund-flow-board.app.workbuddy.host</a> ｜ 数据文件：<code>docs/data/board.json</code> ｜ <span id="generatedAt">—</span></p>
+    <p id="disclaimer">本页为公开看板的复制版，数据仅供参考，不构成投资建议。</p>
+  </div>
+</footer>
+
+<!-- 打包快照：即使以 file:// 打开或无网络也能显示看板 -->
+<script src="data/board.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
