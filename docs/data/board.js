@@ -6,7 +6,7 @@ window.__BOARD_DATA__ = {
     "copied_from": "https://etf-fund-flow-board.app.workbuddy.host/",
     "source_label": "本地快照 source_2026-11-03.md",
     "quote_status": "eastmoney",
-    "generated_at": "2026-11-10T01:43:08+08:00",
+    "generated_at": "2026-11-10T19:38:48+08:00",
     "trade_date": "2026-11-03",
     "intraday_updated_at": "11:49:00",
     "schedule": "每天 11:30 / 15:30（北京时间）",
@@ -34,219 +34,219 @@ window.__BOARD_DATA__ = {
   "intraday": {
     "date": "2026-11-03",
     "updated_at": "11:49:00",
-    "total_turnover_yi": 602.3,
+    "total_turnover_yi": 658.6,
     "rows": [
       {
         "code": "159915",
         "name": "创业板ETF易方达",
-        "turnover_yi": 79.23,
-        "share_pct": 13.2,
-        "change_pct": -0.32
+        "turnover_yi": 87.58,
+        "share_pct": 13.3,
+        "change_pct": 1.5
       },
       {
         "code": "588000",
         "name": "科创50ETF华夏",
-        "turnover_yi": 71.28,
-        "share_pct": 11.8,
-        "change_pct": 0.08
+        "turnover_yi": 72.2,
+        "share_pct": 11.0,
+        "change_pct": 0.75
       },
       {
         "code": "563360",
         "name": "A500ETF华泰柏瑞",
-        "turnover_yi": 58.83,
-        "share_pct": 9.8,
-        "change_pct": 0.0
-      },
-      {
-        "code": "159338",
-        "name": "中证A500ETF国泰",
-        "turnover_yi": 56.9,
-        "share_pct": 9.4,
-        "change_pct": -0.09
+        "turnover_yi": 68.79,
+        "share_pct": 10.4,
+        "change_pct": 0.27
       },
       {
         "code": "159352",
         "name": "A500ETF南方",
-        "turnover_yi": 48.54,
-        "share_pct": 8.1,
-        "change_pct": 0.0
+        "turnover_yi": 58.83,
+        "share_pct": 8.9,
+        "change_pct": 0.27
+      },
+      {
+        "code": "159338",
+        "name": "中证A500ETF国泰",
+        "turnover_yi": 55.32,
+        "share_pct": 8.4,
+        "change_pct": 0.19
       },
       {
         "code": "510300",
         "name": "沪深300ETF华泰柏瑞",
-        "turnover_yi": 44.11,
-        "share_pct": 7.3,
-        "change_pct": 0.15
-      },
-      {
-        "code": "159361",
-        "name": "A500ETF易方达",
-        "turnover_yi": 34.05,
-        "share_pct": 5.7,
-        "change_pct": -0.09
-      },
-      {
-        "code": "510500",
-        "name": "中证500ETF南方",
-        "turnover_yi": 33.73,
-        "share_pct": 5.6,
-        "change_pct": -0.26
+        "turnover_yi": 49.83,
+        "share_pct": 7.6,
+        "change_pct": 0.12
       },
       {
         "code": "512100",
         "name": "中证1000ETF南方",
-        "turnover_yi": 31.19,
-        "share_pct": 5.2,
-        "change_pct": -0.23
+        "turnover_yi": 37.48,
+        "share_pct": 5.7,
+        "change_pct": 1.06
       },
       {
-        "code": "159949",
-        "name": "创业板50ETF华安",
-        "turnover_yi": 17.49,
-        "share_pct": 2.9,
-        "change_pct": -0.18
+        "code": "159361",
+        "name": "A500ETF易方达",
+        "turnover_yi": 36.51,
+        "share_pct": 5.5,
+        "change_pct": 0.19
       },
       {
-        "code": "588080",
-        "name": "科创50ETF易方达",
-        "turnover_yi": 17.48,
-        "share_pct": 2.9,
-        "change_pct": 0.16
+        "code": "510500",
+        "name": "中证500ETF南方",
+        "turnover_yi": 33.5,
+        "share_pct": 5.1,
+        "change_pct": 0.88
       },
       {
         "code": "159845",
         "name": "中证1000ETF华夏",
-        "turnover_yi": 17.21,
-        "share_pct": 2.9,
-        "change_pct": -0.07
+        "turnover_yi": 27.7,
+        "share_pct": 4.2,
+        "change_pct": 1.11
+      },
+      {
+        "code": "588080",
+        "name": "科创50ETF易方达",
+        "turnover_yi": 22.74,
+        "share_pct": 3.5,
+        "change_pct": 0.85
+      },
+      {
+        "code": "159949",
+        "name": "创业板50ETF华安",
+        "turnover_yi": 20.47,
+        "share_pct": 3.1,
+        "change_pct": 1.54
       },
       {
         "code": "560010",
         "name": "中证1000ETF广发",
-        "turnover_yi": 16.17,
-        "share_pct": 2.7,
-        "change_pct": -0.18
+        "turnover_yi": 15.39,
+        "share_pct": 2.3,
+        "change_pct": 1.22
       },
       {
         "code": "510050",
         "name": "上证50ETF华夏",
-        "turnover_yi": 15.62,
-        "share_pct": 2.6,
-        "change_pct": 0.24
-      },
-      {
-        "code": "159919",
-        "name": "沪深300ETF嘉实",
-        "turnover_yi": 12.37,
-        "share_pct": 2.1,
-        "change_pct": 0.23
+        "turnover_yi": 13.17,
+        "share_pct": 2.0,
+        "change_pct": -0.62
       },
       {
         "code": "159952",
         "name": "创业板ETF广发",
-        "turnover_yi": 11.46,
+        "turnover_yi": 12.28,
         "share_pct": 1.9,
-        "change_pct": -0.27
+        "change_pct": 1.46
       },
       {
         "code": "510310",
         "name": "沪深300ETF易方达",
-        "turnover_yi": 10.39,
-        "share_pct": 1.7,
-        "change_pct": 0.15
+        "turnover_yi": 11.66,
+        "share_pct": 1.8,
+        "change_pct": 0.07
       },
       {
-        "code": "512050",
-        "name": "A500ETF华夏",
-        "turnover_yi": 8.86,
-        "share_pct": 1.5,
-        "change_pct": 0.1
-      },
-      {
-        "code": "510210",
-        "name": "上证指数ETF富国",
-        "turnover_yi": 8.7,
-        "share_pct": 1.4,
-        "change_pct": 0.32
+        "code": "159919",
+        "name": "沪深300ETF嘉实",
+        "turnover_yi": 11.55,
+        "share_pct": 1.8,
+        "change_pct": 0.05
       },
       {
         "code": "159633",
         "name": "中证1000ETF易方达",
-        "turnover_yi": 8.69,
-        "share_pct": 1.4,
-        "change_pct": -0.11
+        "turnover_yi": 8.89,
+        "share_pct": 1.3,
+        "change_pct": 1.15
+      },
+      {
+        "code": "512050",
+        "name": "A500ETF华夏",
+        "turnover_yi": 8.72,
+        "share_pct": 1.3,
+        "change_pct": 0.29
+      },
+      {
+        "code": "510210",
+        "name": "上证指数ETF富国",
+        "turnover_yi": 5.98,
+        "share_pct": 0.9,
+        "change_pct": 0.21
       }
     ],
     "cases": [
       {
         "code": "159915",
         "name": "创业板ETF易方达",
-        "turnover_yi": 79.23,
-        "share_pct": 13.2,
-        "change_pct": -0.32
+        "turnover_yi": 87.58,
+        "share_pct": 13.3,
+        "change_pct": 1.5
       },
       {
         "code": "588000",
         "name": "科创50ETF华夏",
-        "turnover_yi": 71.28,
-        "share_pct": 11.8,
-        "change_pct": 0.08
+        "turnover_yi": 72.2,
+        "share_pct": 11.0,
+        "change_pct": 0.75
       },
       {
         "code": "563360",
         "name": "A500ETF华泰柏瑞",
-        "turnover_yi": 58.83,
-        "share_pct": 9.8,
-        "change_pct": 0.0
-      },
-      {
-        "code": "159338",
-        "name": "中证A500ETF国泰",
-        "turnover_yi": 56.9,
-        "share_pct": 9.4,
-        "change_pct": -0.09
+        "turnover_yi": 68.79,
+        "share_pct": 10.4,
+        "change_pct": 0.27
       },
       {
         "code": "159352",
         "name": "A500ETF南方",
-        "turnover_yi": 48.54,
-        "share_pct": 8.1,
-        "change_pct": 0.0
+        "turnover_yi": 58.83,
+        "share_pct": 8.9,
+        "change_pct": 0.27
+      },
+      {
+        "code": "159338",
+        "name": "中证A500ETF国泰",
+        "turnover_yi": 55.32,
+        "share_pct": 8.4,
+        "change_pct": 0.19
       },
       {
         "code": "510300",
         "name": "沪深300ETF华泰柏瑞",
-        "turnover_yi": 44.11,
-        "share_pct": 7.3,
-        "change_pct": 0.15
-      },
-      {
-        "code": "159361",
-        "name": "A500ETF易方达",
-        "turnover_yi": 34.05,
-        "share_pct": 5.7,
-        "change_pct": -0.09
-      },
-      {
-        "code": "510500",
-        "name": "中证500ETF南方",
-        "turnover_yi": 33.73,
-        "share_pct": 5.6,
-        "change_pct": -0.26
+        "turnover_yi": 49.83,
+        "share_pct": 7.6,
+        "change_pct": 0.12
       },
       {
         "code": "512100",
         "name": "中证1000ETF南方",
-        "turnover_yi": 31.19,
-        "share_pct": 5.2,
-        "change_pct": -0.23
+        "turnover_yi": 37.48,
+        "share_pct": 5.7,
+        "change_pct": 1.06
       },
       {
-        "code": "159949",
-        "name": "创业板50ETF华安",
-        "turnover_yi": 17.49,
-        "share_pct": 2.9,
-        "change_pct": -0.18
+        "code": "159361",
+        "name": "A500ETF易方达",
+        "turnover_yi": 36.51,
+        "share_pct": 5.5,
+        "change_pct": 0.19
+      },
+      {
+        "code": "510500",
+        "name": "中证500ETF南方",
+        "turnover_yi": 33.5,
+        "share_pct": 5.1,
+        "change_pct": 0.88
+      },
+      {
+        "code": "159845",
+        "name": "中证1000ETF华夏",
+        "turnover_yi": 27.7,
+        "share_pct": 4.2,
+        "change_pct": 1.11
       }
     ],
     "note": "单只ETF当日表现（按成交额降序，条形背景按成交额相对最大值比例）"
